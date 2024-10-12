@@ -3,12 +3,15 @@
 	import { useStore } from '$lib/store/storage';
 	import { TextureLoader } from 'three';
 	import { useLoader } from '@threlte/core';
+	
+
 
 	$: texture = useLoader(TextureLoader).load($useStore.texture);
+	
 </script>
 
 {#if $texture}
-	<T.MeshMatcapMaterial matcap={$texture} />
+	<T.MeshMatcapMaterial matcap={$texture}  {...$$restProps} />
 {:else}
-	<T.MeshBasicMaterial />
+	<T.MeshBasicMaterial {...$$restProps} />
 {/if}

@@ -1,24 +1,34 @@
 <script lang="ts">
 	import { Canvas } from '@threlte/core';
+	import * as THREE from 'three';
+
 	import Card from '$lib/components/Card.svelte';
 	import Rings from '$lib/components/shapes/Rings.svelte';
 	import Loop from '$lib/components/shapes/Loop.svelte';
 	import Coins from '$lib/components/shapes/Coins.svelte';
 	import Core from '$lib/components/shapes/Core.svelte';
-
+	import Rubik from '$lib/components/shapes/Rubik.svelte';
+	import Travel from '$lib/components/shapes/Travel.svelte';
+	import Stagger from '$lib/components/shapes/Stagger.svelte';
+	import Balance from '$lib/components/shapes/Balance.svelte';
+	import Pulse from '$lib/components/shapes/Pulse.svelte';
+	import Pie from '$lib/components/shapes/Pie.svelte';
+	import Cradle from '$lib/components/shapes/Cradle.svelte';
+	import Arrows from '$lib/components/shapes/Arrows.svelte';
+	import { onMount } from 'svelte';
 	const items = [
 		{ component: Rings, name: 'Rings' },
 		{ component: Loop, name: 'Loop' },
 		{ component: Coins, name: 'Coins' },
 		{ component: Core, name: 'Core' },
-		// { component: 'Item5', name: 'Rubik' },
-		// { component: 'Item6', name: 'Travel' },
-		// { component: 'Item7', name: 'Stagger' },
-		// { component: 'Item8', name: 'Balance' },
-		// { component: 'Item9', name: 'Pulse' },
-		// { component: 'Item10', name: 'Pie' },
-		// { component: 'Item11', name: "Newton's Cradle" },
-		// { component: 'Item12', name: 'Arrows' }
+		{ component: Rubik, name: 'Rubik' },
+		{ component: Travel, name: 'Travel' },
+		{ component: Stagger, name: 'Stagger' },
+		{ component: Balance, name: 'Balance' },
+		{ component: Pulse, name: 'Pulse' },
+		{ component: Pie, name: 'Pie' },
+		{ component: Cradle, name: "Newton's Cradle" },
+		{ component: Arrows, name: 'Arrows' }
 	];
 
 	let cards: HTMLDivElement[] = [];
@@ -44,7 +54,6 @@
 		{#each items as item, index}
 			<Card bind:element={cards[index]} name={item.name}>
 				<Canvas>
-					
 					<svelte:component this={item.component} />
 				</Canvas>
 			</Card>

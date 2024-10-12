@@ -12,7 +12,7 @@
 		<div class="flex items-center">
 			<div class="hidden text-xs text-white/60 md:block">VARIATIONS</div>
 			<div class="flex ml-4 space-x-2">
-				{#each Array.from({ length: 3 }) as _, key}
+				{#each Array.from({ length: 4 }) as _, key}
 					<button
 						class={`${
 							key === $useStore.index ? 'text-white/100 bg-white/20' : 'text-white/60 bg-white/5 '

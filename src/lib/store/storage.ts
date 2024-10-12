@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-const textures = ["/origami/1.jpeg", "/origami/2.jpeg", "/origami/3.jpeg"];
+const textures = ["/origami/1.jpeg", "/origami/2.jpeg", "/origami/3.jpeg","/origami/4.png"];
 
 interface Store {
     index: number;
